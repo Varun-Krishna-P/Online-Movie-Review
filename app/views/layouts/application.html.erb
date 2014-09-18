@@ -1,0 +1,68 @@
+<% provide(:title, 'Online Movie Review') %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <%= link_to "Movie Review", root_path, class: "brand" %> 
+      
+      <ul class="nav">
+      	<li><%= link_to 'Movies', new_movie_path  %></li>
+      	<li><%= link_to 'genre', new_genre_path %></li>
+      	<li><%= link_to 'language', new_language_path %></li>
+      </ul>
+
+      <ul class="nav navbar pull-right">
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.Username, edit_user_registration_path %></li>
+          <li><%= link_to "log out", destroy_user_session_path, :method =>:delete %></li>
+        <% else %>
+      	<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      	<li><%= link_to 'Sign In', new_user_session_path %></li>
+        <% end %>
+      </ul>
+ 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+     
+      </div>
+ 
+    </div>
+  </div>
+</div>
+<h1>Welcome to Movie Review</h1>
+<div class="hero-unit">
+	
+	<div  class="container">
+		<p>
+			This is a for all the movie enthusiast, they could post their own review about the movie, they can also comment on other posts by other users.
+		</p>
+	</div>
+</div>
+
+<% if notice %>
+<div class="alert alert-info">
+  <% if flash[:notice] %>
+    <div><%= flash[:notice] %></div>
+  <% end %>
+</div>
+<% end %>
+<% if alert %>
+<div class="alert alert-error"><%= flash[:alert] %></div> <% end %>
+<%= yield %>
+
+<!-- <div class="navbar navbar-fixed-bottom">
+	<p><h5> This is my first sample sample application created in <i>Ruby on Rails</i>. RoR is very impressive.</h5> Varun Krishna. P</p>
+</div> -->
+
+</body>
+</html>

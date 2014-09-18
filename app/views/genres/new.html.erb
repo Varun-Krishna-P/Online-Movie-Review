@@ -1,0 +1,12 @@
+<h1>genres#new</h1>
+<h1> Add new Genre's here </h1>
+<%= form_for :genre, url: genres_path do |genre| %>
+	<p>
+		<%= genre.label :genre %>
+		<%= genre.text_field :genre %>
+	</p>
+	<p>
+		<%= genre.submit class: "btn btn-success" %>
+	</p>
+
+<% end %>

@@ -1,0 +1,9 @@
+<h1>languages#new</h1>
+<h1>Add new Language here</h1>
+<div>
+	<%= form_for :language, url: languages_path do |lang| %>
+		<%= lang.label :language %>
+		<%= lang.text_field :language %>
+		<%= lang.submit class: "btn btn-success" %>
+	<% end %>
+</div>
