@@ -11,8 +11,8 @@
 
 		<!-- The following form of collection_select  lists all the values from the database, no ordering is done -->
 		<!--<%= f.collection_select(:genre,Genre.all,:id,:genre) %> -->
-		<!-- The following form of collection_select list all the genre in the order -- >
-		<<%= f.collection_select(:genre, Genre.order(:genre),:id,:genre) %>
+		<!-- The following form of collection_select list all the genre in the order -->
+		<%= f.collection_select(:genre, Genre.order(:genre), :id, :genre) %>
 	</p>
 
 	<p>

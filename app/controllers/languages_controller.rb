@@ -1,4 +1,5 @@
 class LanguagesController < ApplicationController
+	before_filter :authenticate_user!
 	def show
 		@language = Language.find(params[:id])
 	end
@@ -20,7 +21,7 @@ class LanguagesController < ApplicationController
 
 	def update
 		@language = Language.find(params[:id])
-		if(@language.update)
+		if(@language.update_attributes(params[:language]))
 			redirect_to(@language,:notice =>"Genre successfully updated")
 		else
 			redirect_to(edit_language_path)
@@ -32,5 +33,9 @@ class LanguagesController < ApplicationController
 		@language = Language.find(params[:id]).destroy
 		redirect_to(@language,:notice => "Language deleted successfully")
 		
+	end
+
+	def new
+		@language = Language.new
 	end
 end

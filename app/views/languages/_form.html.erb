@@ -1,0 +1,5 @@
+<%= form_for(@language) do |lang| %>
+	<%= lang.label :language %>
+	<%= lang.text_field :language, class: "form-control",placeholder: "Language" %>
+	<%= lang.submit class: "btn btn-success" %>
+<% end %>

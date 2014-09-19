@@ -1,4 +1,5 @@
 class GenresController < ApplicationController
+	before_filter :authenticate_user!
 	def show
 		@genre = Genre.find(params[:id])
 	end
@@ -21,7 +22,7 @@ class GenresController < ApplicationController
 
 	def update
 		@genre = Genre.find(params[:id])
-		if(@genre.update)
+		if(@genre.update_attributes(params[:genre]))
 			redirect_to(@genre,:notice =>"Genre successfully updated")
 		else
 			redirect_to(edit_genre_path)
@@ -34,6 +35,11 @@ class GenresController < ApplicationController
 		#or
 		#@genre = Genre.find(params[:id]).destroy
 		redirect_to(genres_path,:notice => "Genre deleted successfully")
+		
+	end
+
+	def new
+		@genre = Genre.new
 		
 	end
 end

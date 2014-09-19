@@ -1,0 +1,11 @@
+<div class="hero-unit divCenterAlign">
+	<%= form_for(@genre) do |genre| %>
+		<p>
+			<%= genre.label :genre %>
+			<%= genre.text_field :genre %>
+		</p>
+		<p>
+			<%= genre.submit class: "btn btn-success" %>
+		</p>	
+	<% end %>
+</div>
