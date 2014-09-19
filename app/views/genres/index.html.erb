@@ -1,1 +1,16 @@
 <h1>genres#index</h1>
+<h1>Listing all Genres</h1>
+<table class="table table-stripped">
+	<tr>
+		<td>ID</td>
+		<td>Genre</td>
+		<td>Action </td>
+	</tr>
+	<% @genres.each do |genre| %>
+	<tr>
+	<td><%= genre.id %> </td>
+	<td> <%= genre.genre %> </td>
+	<td><%=link_to "Delete",genre_path(genre),:confirm => "Are you sure?", :method => :delete, class: "btn btn-danger" %></td>
+	</tr>
+	<% end %>
+</table>
