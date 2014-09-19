@@ -1,4 +1,6 @@
+<% provide(:title,"Show Individual Language") %>
 <h1>languages#show</h1>
 <div>
-	
+	<strong>Language:<%= @language.language %></strong>
 </div>
+<%= link_to "Home", root_path, class: "btn btn-info" %> <%= link_to "Back", new_language_path, class: "btn btn-info" %> <%= link_to "List Languages", languages_path, class: " btn btn-info" %>

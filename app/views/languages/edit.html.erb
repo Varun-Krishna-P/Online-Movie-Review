@@ -1,0 +1,11 @@
+<% provide(:title, "Editing Language")%>
+<h1>languages#edit</h1>
+<h1>Edit Language here</h1>
+<div>
+	<%= form_for :language, url: languages_path do |lang| %>
+		<%= lang.label :language %>
+		<%= lang.text_field :language %>
+		<%= lang.submit class: "btn btn-success" %>
+	<% end %>
+</div>
+<%= link_to "Home", root_path, class: "btn btn-info" %> <%= link_to "Back", languages_path, class: "btn btn-info" %>

@@ -1,3 +1,4 @@
+<% provide(:title, "New Genre") %>
 <h1>genres#new</h1>
 <h1> Add new Genre's here </h1>
 <%= form_for :genre, url: genres_path do |genre| %>
@@ -10,3 +11,4 @@
 	</p>
 
 <% end %>
+<%= link_to "Home", root_path, class: "btn btn-info" %> <%= link_to "Back", genres_path, class: "btn btn-info" %>

@@ -8,11 +8,24 @@ class GenresController < ApplicationController
 	def create
 		@genre = Genre.create(params[:genre])
 		if(@genre.save)
-			redirect_to(@genre, :notice => "Genre Saved successfully")
+			redirect_to(genres_path, :notice => "Genre Saved successfully")
 		else
 			redirect_to(new_genre_path, :alert => "genre not saved")
 		end
 		#render :text => params[:genre].inspect
+	end
+
+	def edit
+		@genre = Genre.find(params[:id])
+	end
+
+	def update
+		@genre = Genre.find(params[:id])
+		if(@genre.update)
+			redirect_to(@genre,:notice =>"Genre successfully updated")
+		else
+			redirect_to(edit_genre_path)
+		end
 	end
 	def destroy
 		#@genre = Genre.find([params[:id]]).destroy

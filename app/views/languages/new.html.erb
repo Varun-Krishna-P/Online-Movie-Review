@@ -1,3 +1,4 @@
+<% provide(:title, "New Language")%>
 <h1>languages#new</h1>
 <h1>Add new Language here</h1>
 <div>
@@ -7,3 +8,4 @@
 		<%= lang.submit class: "btn btn-success" %>
 	<% end %>
 </div>
+<%= link_to "Home", root_path, class: "btn btn-info" %> <%= link_to "List Languages", languages_path, class: "btn btn-info" %>

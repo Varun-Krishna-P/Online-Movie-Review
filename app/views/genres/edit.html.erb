@@ -1,0 +1,13 @@
+<% provide(:title,"Editing Genres") %>
+<h1>genres#edit</h1>
+<h1> Edit the  Genre's here </h1>
+<%= form_for :genre, url: genres_path(@genre) do |genre| %>
+	<p>
+		<%= genre.label :genre %>
+		<%= genre.text_field :genre %>
+	</p>
+	<p>
+		<%= genre.submit class: "btn btn-success" %>
+	</p>
+	<%= link_to "Home",root_path,class: "btn btn-info" %> <%= link_to "New Genre",new_genre_path,class: "btn btn-info" %> <%= link_to "Back",genres_path,class: "btn btn-info" %>
+<% end %>

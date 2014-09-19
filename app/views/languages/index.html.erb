@@ -1,16 +1,19 @@
+<% provide(:title,"Listing Languages") %>
 <h1>languages#index</h1>
 <h1>Listing languages</h1>
 <table class="table table-stripped">
 	<tr>
 		<td>ID</td>
 		<td>Language</td>
-		<td>Action</td>
+		<td colspan="2">Action</td>
 	</tr>
 	<% @languages.each do |language| %>
 	<tr>
 		<td><%= language.id %></td>
 		<td><%= language.language %></td>
 		<td><%= link_to "Delete", language_path(language), confirm: "Are you sure?", method: :delete, class: "btn btn-danger" %>
+		<td> <%= link_to "Edit",edit_language_path(language),class: "btn btn-info" %>
 	</tr>
 	<% end %>
 </table>
+<%= link_to "Home", root_path, class: "btn btn-info" %> <%= link_to "Back", new_language_path, class: "btn btn-info" %>

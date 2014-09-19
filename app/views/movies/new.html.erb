@@ -7,12 +7,22 @@
 	</p>
 	<p>
 		<%= f.label :genre %>
-		<%= select_tag(:genreId, options_for_select(['Action','Adventure','Crime','Comedy','Cult','Thriller','Horror','Sci-fi'])) %>
+		<!--<%= select_tag(:genreId, options_for_select(['Action','Adventure','Crime','Comedy','Cult','Thriller','Horror','Sci-fi'])) %> -->
+
+		<!-- The following form of collection_select  lists all the values from the database, no ordering is done -->
+		<!--<%= f.collection_select(:genre,Genre.all,:id,:genre) %> -->
+		<!-- The following form of collection_select list all the genre in the order -- >
+		<<%= f.collection_select(:genre, Genre.order(:genre),:id,:genre) %>
 	</p>
 
 	<p>
 		<%= f.label :language %>
-		<%= select_tag(:language,options_for_select(['English','Hindi','Tamil'])) %>
+		<!-- <%= select_tag(:language,options_for_select(['English','Hindi','Tamil'])) %>-->
+
+		<!-- The following form of collection_select does not order the languages, it displays as is in the database -- >
+		<!-- <%= f.collection_select(:language, Language.all, :id, :language) %> -->
+		<!-- The following form of collection_select orders the language -->
+		 <%= f.collection_select(:language, Language.order(:language), :id, :language) %>
 	</p>
 	<p>
 		<%= f.label :description %>
@@ -22,3 +32,4 @@
 		<%= f.submit class: "btn btn-success" %>
 	</p>
 <% end %>
+<%= link_to "Home",root_path,class: "btn btn-info" %> <%= link_to "List Movies",movies_path, class: "btn btn-info" %>
