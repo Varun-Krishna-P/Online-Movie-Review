@@ -12,10 +12,10 @@
 		<tr>
 		<td><%= genre.id %> </td>
 		<td> <%= genre.genre %> </td>
-		<td><%=link_to "Delete",genre_path(genre),:confirm => "Are you sure?", :method => :delete, class: "btn btn-danger" %></td>
-		<td><%= link_to "Edit",edit_genre_path(genre), class: "btn btn-info" %>
+		<td><%=link_to "<i class='icon-trash'></i>".html_safe,genre_path(genre),:confirm => "Are you sure?", :method => :delete, class: "btn btn-danger" %></td>
+		<td><%= link_to "<i class='icon-edit'></i>".html_safe,edit_genre_path(genre), class: "btn btn-info" %>
 		</tr>
 		<% end %>
 	</table>
 </div>
-<%= link_to "Home", root_path,class: "btn btn-info" %> <%= link_to "New Genres", new_genre_path,class: "btn btn-info" %>
+<%= link_to "<i class='icon-home'></i>".html_safe, root_path,class: "btn btn-info" %> <%= link_to "<i class='icon-plus'></i>".html_safe, new_genre_path,class: "btn btn-info" %>

@@ -1,6 +1,12 @@
 <% provide(:title, 'New Movies') %>
 <h1>New Movies</h1>
 <%= form_for :movie, url: movies_path do |f| %>
+	<div>
+		<!-- <% if user_signed_in? %>
+			<%= f.label :Username %> 
+			<%= f.label current_user.Username, class: "well" %>
+		<% end %> -->
+	</div>
 	<p>
 		<%= f.label :title %> 
 		<%= f.text_field :title %>
@@ -12,7 +18,7 @@
 		<!-- The following form of collection_select  lists all the values from the database, no ordering is done -->
 		<!--<%= f.collection_select(:genre,Genre.all,:id,:genre) %> -->
 		<!-- The following form of collection_select list all the genre in the order -->
-		<%= f.collection_select(:genre, Genre.order(:genre), :id, :genre) %>
+		<%= f.collection_select(:genre, Genre.order(:genre), :id, :genre, :prompt => true) %>
 	</p>
 
 	<p>
@@ -22,7 +28,7 @@
 		<!-- The following form of collection_select does not order the languages, it displays as is in the database -- >
 		<!-- <%= f.collection_select(:language, Language.all, :id, :language) %> -->
 		<!-- The following form of collection_select orders the language -->
-		 <%= f.collection_select(:language, Language.order(:language), :id, :language) %>
+		 <%= f.collection_select(:language, Language.order(:language), :id, :language, :prompt => true) %>
 	</p>
 	<p>
 		<%= f.label :description %>
@@ -32,4 +38,4 @@
 		<%= f.submit class: "btn btn-success" %>
 	</p>
 <% end %>
-<%= link_to "Home",root_path,class: "btn btn-info" %> <%= link_to "List Movies",movies_path, class: "btn btn-info" %>
+<%= link_to "<i class='icon-home'></i>".html_safe,root_path,class: "btn btn-info" %> <%= link_to "<i class='icon-list'></i>".html_safe,movies_path, class: "btn btn-info" %>
