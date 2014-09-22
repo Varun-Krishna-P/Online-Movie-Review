@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140919045108) do
+ActiveRecord::Schema.define(:version => 20140922022215) do
 
   create_table "genres", :force => true do |t|
     t.string   "genre"
@@ -24,6 +24,20 @@ ActiveRecord::Schema.define(:version => 20140919045108) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "movies", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "genre_id"
+    t.integer  "language_id"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "movies", ["genre_id"], :name => "index_movies_on_genre_id"
+  add_index "movies", ["language_id"], :name => "index_movies_on_language_id"
+  add_index "movies", ["user_id"], :name => "index_movies_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
