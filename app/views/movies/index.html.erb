@@ -2,4 +2,27 @@
 <h1>Movies#index</h1>
 <p>Find me in app/views/movies/index.html.erb</p>
 
+<div class="tablediv">
+	<table class="table table-stripped">
+		<tr>
+			<td>ID</td>
+			<td>Movie Title</td>
+			<td>Description</td>
+			<td colspan="3">Action</td>
+		</tr>
+		<% @movies.each do |movie| %>
+			<tr>
+				<td><%= movie.user_id %></td>
+				<td><%= movie.title %></td>
+				<td><%= movie.description %></td>
+				<td>				
+					<%= link_to "<i class='icon-edit'></i>".html_safe,edit_movie_path(movie), class: "btn btn-info" %>						
+				</td>
+				<td><%= link_to "<i class='icon-trash'></i>".html_safe,movie_path(movie),:confirm => "Are you sure?",:method => :delete, class: "btn btn-danger" %>	</td>
+			</tr>
+		<% end %>
+
+	</table>
+</div>
+
 <%= link_to "<i class='icon-home'></i>".html_safe, root_path, class: "btn btn-info" %>
