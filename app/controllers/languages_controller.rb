@@ -4,7 +4,8 @@ class LanguagesController < ApplicationController
 		@language = Language.find(params[:id])
 	end
 	def index
-		@languages = Language.all
+		@search = Language.search(params[:q])
+		@languages = @search.result
 	end
 	def create
 		#render :text => params[:language].inspect

@@ -4,7 +4,8 @@ class GenresController < ApplicationController
 		@genre = Genre.find(params[:id])
 	end
 	def index
-		@genres = Genre.all
+		@search = Genre.search(params[:q])
+		@genres = @search.result
 	end
 	def create
 		@genre = Genre.create(params[:genre])

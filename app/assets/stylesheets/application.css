@@ -44,6 +44,11 @@
 		margin-right: 1%;
 		margin-top: 1%;
 	}
+
+	.div-search {
+		margin-left: 2%;
+		margin-right: 70%;
+	}
 }
 
 @media all and (max-height: 1920px)
@@ -78,5 +83,10 @@
 		margin-left: 65%;
 		margin-right: 1%;
 		margin-top: 1%;
+	}
+
+	.div-search {
+		margin-left: 2%;
+		margin-right: 70%;
 	}
 }
