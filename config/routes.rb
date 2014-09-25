@@ -2,7 +2,10 @@ OnlineMovieTicket::Application.routes.draw do
   devise_for :users
 
   get "movies/index"
-  resources :movies, :languages, :genres
+  resources :movies do
+    member {post :vote}
+  end
+  resources :languages, :genres
   get "home/index"
   root :to => 'home#index'
 

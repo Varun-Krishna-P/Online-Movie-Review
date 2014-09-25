@@ -56,4 +56,12 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     
   end
+
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @movie= Movie.find(params[:id])
+    @movie.add_or_update_evaluation(:votes,value,current_user)
+    redirect_to :back, :notice => "Thanks for voting!!!"
+    
+  end
 end

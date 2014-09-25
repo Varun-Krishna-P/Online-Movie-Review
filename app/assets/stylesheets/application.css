@@ -17,7 +17,7 @@
 		margin-left: 30%;
 		margin-right: 30%;
 		margin-top: 3%;
-		margin-bottom: 10%;
+		margin-bottom: 2%;
 	}
 
 	.login {
@@ -48,6 +48,16 @@
 	.div-search {
 		margin-left: 2%;
 		margin-right: 70%;
+	}
+
+	.div-right-align{
+		margin-left: 50%;
+		margin-right: 15%;
+	}
+
+	.rt-align-votes {
+		margin-right: 1%;
+		margin-left: 93%;
 	}
 }
 
@@ -57,7 +67,7 @@
 		margin-left: 30%;
 		margin-right: 30%;
 		margin-top: 3%;
-		margin-bottom: 10%;
+		margin-bottom: 2%; 
 	}
 
 	.login {
@@ -88,5 +98,14 @@
 	.div-search {
 		margin-left: 2%;
 		margin-right: 70%;
+	}
+	.div-right-align{
+		margin-left: 50%;
+		margin-right: 30%;
+	}
+
+	.rt-align-votes {
+		margin-right: 1%;
+		margin-left: 75%;
 	}
 }

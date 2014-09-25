@@ -5,4 +5,6 @@ class Movie < ActiveRecord::Base
   attr_accessible :description, :title, :genre_id, :language_id, :user_id
   validates :title, presence: true   			
   validates :description, presence: true
+
+  has_reputation :votes, source: :user, aggregated_by: :sum 
 end
