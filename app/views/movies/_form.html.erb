@@ -1,4 +1,4 @@
-<%= form_for @movie do |f| %>
+<%= form_for @movie, :html => {:class => "divCenterAlign well"} do |f| %>
 <div>
 		<% if user_signed_in? %>
 			<!--<%= f.label :id %> -->

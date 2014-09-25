@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
 	before_filter :authenticate_user!
-  before_filter :find_movie, only: [:edit, :update, :destroy]
+  before_filter :find_movie, only: [:update, :destroy]
   def find_movie
     @movie = current_user.movies.find_by_id(params[:id])
     
@@ -27,11 +27,12 @@ class MoviesController < ApplicationController
     end
   end
   def edit
-  	if @movie
-      redirect_to(movies_path,:notice => "Movie updated successfully") 
-    else
-      redirect_to(movies_path, :alert => "You can only update the post created by you !")
-    end     
+    @movie = Movie.find(params[:id])
+  	#if @movie
+     # redirect_to(movies_path,:notice => "Movie edited successfully") 
+    #else
+     # redirect_to(movies_path, :alert => "You can only edit the post created by you !")
+    #end     
   end
   def update   
     if @movie
@@ -48,6 +49,11 @@ class MoviesController < ApplicationController
     else
       redirect_to(movies_path, :alert => "You can only delete the post created by you !")
     end
+    
+  end
+
+  def show
+    @movie = Movie.find(params[:id])
     
   end
 end

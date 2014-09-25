@@ -18,6 +18,9 @@
 				<td>				
 					<%= link_to "<i class='icon-edit'></i>".html_safe,edit_movie_path(movie), class: "btn btn-info" %>						
 				</td>
+				<td>
+					<%= link_to "<i class='icon-eye-open'></i>".html_safe,movie_path(movie), class: "btn btn-primary" %>
+				</td>
 				<td><%= link_to "<i class='icon-trash'></i>".html_safe,movie_path(movie),:confirm => "Are you sure?",:method => :delete, class: "btn btn-danger" %>	</td>
 			</tr>
 		<% end %>
