@@ -9,7 +9,7 @@ class Movie < ActiveRecord::Base
   has_reputation :votes, source: :user, aggregated_by: :sum 
 
   acts_as_taggable
-
+	
 	def tag_list
 	  tags.map(&:name).join(", ")
 	end
