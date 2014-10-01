@@ -1,6 +1,6 @@
 OnlineMovieTicket::Application.routes.draw do
   devise_for :users
-
+  get  'tags/:tag', :to => 'movies#index', :as =>  :tag
   get "movies/index"
   resources :movies do
     member {post :vote}

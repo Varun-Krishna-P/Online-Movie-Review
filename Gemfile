@@ -37,6 +37,9 @@ gem 'ransack'
 #Voting
 gem 'activerecord-reputation-system', require: 'reputation_system'
 
+#content tagging
+gem 'acts-as-taggable-on'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

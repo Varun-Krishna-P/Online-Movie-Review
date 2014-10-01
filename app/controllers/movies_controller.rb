@@ -7,7 +7,11 @@ class MoviesController < ApplicationController
   end
 
   def index
-  	@movies = Movie.all
+    if params[:tag]
+      @Movies = Movie.tagged_with(params[:tag])
+    else
+      @movies = Movie.all      
+    end  	
   end
   def new
   	@movie = Movie.new
@@ -64,4 +68,6 @@ class MoviesController < ApplicationController
     redirect_to :back, :notice => "Thanks for voting!!!"
     
   end
+
+ 
 end

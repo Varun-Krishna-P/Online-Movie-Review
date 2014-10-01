@@ -11,6 +11,12 @@
 	Language: <strong><%= @movie.language.language %></strong><br/>
 	Description: <strong><%= @movie.description %></strong>	
 </div>
+<div class="well divCenterAlign">
+	Tags: <% @movie.tags.each do |tag| %>
+	 <span class="label label-success"><%= tag %></span>
+	<% end %>
+	
+</div>
 <div class="well div-right-align">
 	By: <strong><%= @movie.user.Username %></strong><br/>
 </div>
